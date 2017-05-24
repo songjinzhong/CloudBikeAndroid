@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.protobuf'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.7.7'
+    }
+}
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.0.0-alpha-3'
+    }
+    generateProtoTasks {
+        all()*.builtins {
+            javanano {
+                option 'java_multiple_files=false'
+                option 'ignore_services=false'
+                option 'enum_style=java'
+                option 'optional_field_style=accessors'
+                //option 'parcelable_messages=true' //PhoneEvent extends com.google.protobuf.nano.android.ParcelableMessageNano
+            }
+        }
+    }
+}
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+        }
+        
+        release {
+            minifyEnabled true
+            proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    protobuf files('proto/Protos.proto')
+    compile project(':libraries-common')
+}

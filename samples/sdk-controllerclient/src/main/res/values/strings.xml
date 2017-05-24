@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">"Cloud VR Client"</string>
+    <string name="app_version">"Version: 0.1"</string>
+
+    <string name="title_main">模式选择</string>
+    <string name="title_mode1">体验模式</string>
+    <string name="title_mode2">健身模式</string>
+    <string name="title_mode3">其他模式</string>
+    <string name="title_controller_test">遥控器测试</string>
+    <string name="title_server_settings">云服务器设置</string>
+
+    <string name="no_status">NO STATUS</string>
+    <string name="label_api_status">API Status:</string>
+    <string name="label_controller_connection">Controller Connection:</string>
+    <string name="label_orientation">Orientation:</string>
+    <string name="label_touchpad">Touchpad:</string>
+    <string name="label_buttons">Buttons:</string>
+
+    <string name="to_test_controller">"to test controller"</string>
+
+    <string name="error_sending_command">"An error occurred while sending controller command"</string>
+    <string name="isTouch">"Touching"</string>
+    <string name="speedUp">SpeedUp</string>
+    <string name="speedDown">SpeedDown</string>
+    <string name="clearUp">ClearUp</string>
+    <string name="clearDown">ClearDown</string>
+    <!-- Mode3Activity -->
+    <string name="game">Game</string>
+    <string name="log">Log</string>
+    <string name="controller">Controller</string>
+    <string name="enterHome">"Press again to exit"</string>
+
+    <!-- Menu -->
+    <string name="settings">Settings</string>
+
+    <!-- MainFragment -->
+    <string name="fps_counter">fps_counter</string>
+    <string name="press">Press</string>
+    <string name="play_button">Play button</string>
+    <string name="to_connect">to connect server</string>
+    <string name="connecting">Connecting ..</string>
+    <string name="error_cannot_connect">Can\'t connect to the server</string>
+    <string name="error_cant_send_screen_res">Can\'t send screen resolution</string>
+    <string name="error_receiving_images">An error occurred while receiving images</string>
+    <string name="error_sending_gyro">An error occurred while sending gyro data</string>
+    <string name="error_sending_touch">An error occurred while sending touch data</string>
+
+    <!-- MainActivity -->
+    <string name="select_ride_mode">请选择骑行模式</string>
+    <string name="select_controller_mode">体验模式</string>
+    <string name="select_buildup_mode">健身模式</string>
+    <string name="server_setting_notification">"请先点击右上角按钮设置服务器信息"</string>
+
+    <string name="quit_controller">确定要退出遥控器测试吗？</string>
+    <string name="quit_mode1">确定要退出体验模式吗？</string>
+    <string name="quit_mode2">确定要退出健身模式吗？</string>
+    <string name="confirm_yes">确定</string>
+    <string name="confirm_no">取消</string>
+
+    <!-- SettingActivity -->
+    <string name="server_ip">服务器地址</string>
+    <string name="server_port">服务器端口</string>
+    <string name="server_use_tcp">使用TCP连接</string>
+    <string name="server_settings_sp_key">server_settings</string>
+    <string name="server_ip_key">server_ip</string>
+    <string name="server_port_key">server_port</string>
+    <string name="server_use_tcp_key">server_use_tcp</string>
+    <string name="server_ip_port_empty">IP和端口号都不能为空</string>
+
+    <string name="error_sending_speed_command">"An error occurred while sending speed control command"</string>
+    <string name="error_sending_resolution_command">"An error occurred while sending resolution command"</string>
+    <string name="error_sending_turn_command">"An error occurred while sending turn command"</string>
+
+
+</resources>

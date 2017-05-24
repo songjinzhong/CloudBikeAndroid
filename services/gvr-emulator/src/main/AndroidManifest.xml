@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.google.vr.vrcore"
+    android:persistent="false">
+
+    <!-- android:sharedUserId="android.uid.system" -->
+    <!-- VR feature tags. -->
+    <uses-feature
+        android:name="android.software.vr.mode"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.vr.high_performance"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="false"
+        android:description="@string/app_desc"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name">
+
+        <service
+            android:name=".common.VrCoreListenerService"
+            android:enabled="true"
+            android:exported="true">
+            <!-- android:permission="android.permission.BIND_VR_LISTENER_SERVICE"> -->
+            <intent-filter>
+                <action android:name="android.service.vr.VrListenerService" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".controller.ControllerService"
+            android:description="@string/service_controller_service_desc"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/service_controller_service_name">
+            <!-- android:process="com.google.vr.vrcore.service" //commented for debug -->
+            <intent-filter>
+                <action android:name="com.google.vr.vrcore.controller.BIND" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".settings.VrSettingsActivity"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.DeviceDefault.Light.DarkActionBar">
+            <intent-filter android:priority="100">
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.google.vrtoolkit.cardboard.CONFIGURE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="com.google.intent.category.CARDBOARD" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="com.google.intent.action.vr.VR_SETTINGS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".settings.VrSettingsProvider"
+            android:authorities="com.google.vr.vrcore.settings"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="100">
+                <action android:name="android.content.action.VR_SETTINGS_PROVIDER" />
+            </intent-filter>
+        </provider>
+
+        <activity
+            android:name=".settings.PermissionsHelperActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoDisplay" />
+
+    </application>
+
+</manifest>

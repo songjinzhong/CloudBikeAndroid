@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.cloudvr.client">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.NETWORK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.sensor.gyroscope"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:screenOrientation="landscape"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".splash.SplashActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".main.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/title_main" />
+        <activity
+            android:name=".main.Mode1Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/title_mode1" />
+        <activity
+            android:name=".main.Mode2Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/title_mode2" />
+        <activity
+            android:name=".main.Mode3Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/title_mode3" />
+        <activity android:name=".controller.ControllerClientActivity"
+            android:label="@string/title_controller_test"/>
+        <activity
+            android:name=".main.SettingActivity"
+            android:label="@string/title_server_settings"></activity>
+    </application>
+
+</manifest>
