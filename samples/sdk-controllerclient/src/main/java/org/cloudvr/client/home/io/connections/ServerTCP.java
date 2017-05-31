@@ -49,7 +49,7 @@ public class ServerTCP extends AbstractServerTCP implements ServerIO {
             try {
                 // receive images
                 int dim;
-                int d1;
+                //int d1;
                 while ((dim = inputStream.readInt()) > 0) {
                     byte[] img = new byte[dim];
                     inputStream.readFully(img, 0, dim);
