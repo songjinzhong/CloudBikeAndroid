@@ -102,9 +102,11 @@ public class RemoteVRView extends View {
         double viewHeight = canvas.getHeight();
         double imageWidth = bitmap.getWidth();
         double imageHeight = bitmap.getHeight();
-        double scale = Math.max(viewWidth / imageWidth, viewHeight / imageHeight);
+        double scale = Math.max(viewWidth / imageWidth / 2, viewHeight / imageHeight);
         //System.out.println(viewWidth + "---" + imageWidth);
+        //System.out.println(scale);
         Rect destBounds = new Rect( 0, 0, (int) ( imageWidth * scale ), (int) ( imageHeight * scale ) );
+        //System.out.println(imageWidth * scale + "---" + imageHeight * scale);
         canvas.drawBitmap(bitmap, null, destBounds, null);
         destBounds = new Rect((int) (viewWidth / 2), 0, (int) ( viewWidth / 2 + imageWidth * scale ), (int) ( imageHeight * scale ) );
         canvas.drawBitmap(bitmap, null, destBounds, null);
